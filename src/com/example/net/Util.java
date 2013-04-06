@@ -7,12 +7,12 @@ public class Util {
 		
 		if (response.isSuccess()) {
 			try {
-				if (response.isSuccess()) {
-					callbacks.onSuccess(response);
-				}
+				callbacks.onSuccess(response);
 			} catch (Exception e) {
 				callbacks.onFailure(response);
 			}
+		} else {
+			callbacks.onFailure(response);
 		}
 	}
 }

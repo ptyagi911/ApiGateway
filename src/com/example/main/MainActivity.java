@@ -23,29 +23,29 @@ public class MainActivity extends Activity implements UICallbacks {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_screen);
+		setContentView(R.layout.main_activity);
 		
-		api = new NetApi();
-		api.setUICallbacks(this);
-		
-		button = (Button) findViewById(R.id.button1);
-		textView = (TextView) findViewById(R.id.textView1);
-		button.setOnClickListener(new OnClickListener() {
-			
-			public void onClick(View v) {
-				fetchData();
-				
-				String text = api.getResponseString();
-				System.out.println("Text: " + text);
-				textView.setText(text);
-				
-				fetchData();
-				
-				String text3 = api.getResponseString();
-				System.out.println("Text3: " + text3);
-				textView.setText(text);
-			}
-		});
+//		api = new NetApi();
+//		api.setUICallbacks(this);
+//		
+//		button = (Button) findViewById(R.id.button1);
+//		textView = (TextView) findViewById(R.id.textView1);
+//		button.setOnClickListener(new OnClickListener() {
+//			
+//			public void onClick(View v) {
+//				fetchData();
+//				
+//				String text = api.getResponseString();
+//				System.out.println("Text: " + text);
+//				textView.setText(text);
+//				
+//				fetchData();
+//				
+//				String text3 = api.getResponseString();
+//				System.out.println("Text3: " + text3);
+//				textView.setText(text);
+//			}
+//		});
 	}
 
 	public void fetchData() {

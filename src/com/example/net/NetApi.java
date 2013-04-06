@@ -28,10 +28,10 @@ public class NetApi implements ResponseCallbacks {
 	public void onSuccess(NetResponse response) throws IOException {
 		System.out.println(response);
 		if (response.isSuccess()) {
-			responseString = "Request Fetched Successfully";
+			responseString = response.getSuccessResponseString();
 			uiCallbacks.onSuccess(responseString);
 		} else {
-			responseString = "Failed to fetch request";
+			responseString = response.getFailureResponseString();
 			uiCallbacks.onFailure(responseString);
 		}
 		
@@ -40,7 +40,9 @@ public class NetApi implements ResponseCallbacks {
 
 	@Override
 	public void onFailure(NetResponse response) {
-		System.out.println(response);	
+		System.out.println(response);
+		responseString = "Failed to fetch request";
+		uiCallbacks.onFailure(responseString);
 	}
 
 	public String getResponseString() {

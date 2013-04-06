@@ -18,7 +18,7 @@ import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 
-public class NetCallDispatcher {
+public class HttpLayer {
 	private DefaultHttpClient httpClient;
 	
 	public Response makeCall(String url, Map<String, String> headers, String username, String password) throws IOException {

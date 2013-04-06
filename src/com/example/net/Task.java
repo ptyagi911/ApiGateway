@@ -11,10 +11,10 @@ import android.os.AsyncTask;
 
 public class Task extends AsyncTask<NetRequest, Void, NetResponse>{
 	private ResponseCallbacks responseCallbacks;
-	private NetCallDispatcher dispatcher;
+	private HttpLayer dispatcher;
 	
 	public Task() {
-		dispatcher = new NetCallDispatcher();
+		dispatcher = new HttpLayer();
 	}
 	
 	public void setResponseCallbacks(ResponseCallbacks callbacks) {
@@ -29,7 +29,7 @@ public class Task extends AsyncTask<NetRequest, Void, NetResponse>{
 		NetResponse netResponse = null;
 		
 		try {
-			NetCallDispatcher.Response response = 
+			HttpLayer.Response response = 
 					dispatcher.makeCall(request.getUrl(), 
 					request.getHeaders(), null, null); 
 					
